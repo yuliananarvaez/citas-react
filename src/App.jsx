@@ -1,3 +1,4 @@
+import ListadoPacientes from "./components/ListadoPacientes"
 import Formulario from "./components/Formulario"
 import Header from "./components/Header"
 
@@ -8,7 +9,7 @@ function App() {
 
       <div className="mt-12 md:flex">
         <Formulario />
-
+        <ListadoPacientes />
       </div>
 
     </div>
