@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Alerta from "./Alerta";
 
-const Formulario = () => {
+const Formulario = ({ pacientes, setPacientes }) => {
 
     const [nombre, setNombre] = useState("");
     const [propietario, setPropietario] = useState("");
@@ -24,6 +24,25 @@ const Formulario = () => {
             error: false,
             mensaje: "Paciente registrado"
         })
+
+        setPacientes(
+            [
+                ...pacientes,
+                {
+                    nombre,
+                    propietario,
+                    email,
+                    alta,
+                    sintomas
+                }
+            ]
+        )
+
+        setNombre("")
+        setPropietario("")
+        setEmail("")
+        setAlta("")
+        setSintomas("")
     }
 
     const { mensaje } = alerta;
